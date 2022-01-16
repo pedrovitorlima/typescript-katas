@@ -9,15 +9,12 @@ describe("solution", () => {
       '(({}))',
       '(([])()())',
     ];
-
-    testInputs.forEach((testInput) => {
-      test.each(testInputs) (
-        'test input %p should be considered valid',
-        (testInput) => {
-          expect(validBraces(testInput)).toBeTruthy();
-        }
-      ) 
-    })
+    test.each(testInputs) (
+      'test input %p should be considered valid',
+      (testInput) => {
+        expect(validBraces(testInput)).toBeTruthy();
+      }
+    )
   });
 
   describe('should return false given valid invalid parameters', () => {
@@ -30,13 +27,11 @@ describe("solution", () => {
       ']'
     ];
 
-    testInputs.forEach((testInput) => {
-      test.each(testInputs) (
-        'test input %p should be considered invalid',
-        (testInput) => {
-          expect(validBraces(testInput)).toBeFalsy();
-        }
-      )
-    })
-  });
+    test.each(testInputs) (
+      'test input %p should be considered invalid',
+      (testInput) => {
+        expect(validBraces(testInput)).toBeFalsy();
+      }
+    )
+  })
 });
